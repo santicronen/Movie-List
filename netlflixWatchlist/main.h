@@ -6,4 +6,4 @@ struct FILM{ //
     char type[50];
 
     struct FILM *next;
-}
+};
