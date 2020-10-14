@@ -1,4 +1,7 @@
+// header file
+
 #include <stdio.h>
+#include <stdlib.h>
 
 struct FILM{ //
     int id;
@@ -7,3 +10,6 @@ struct FILM{ //
 
     struct FILM *next;
 };
+
+void menu();
+void push(FILM *head, int val);
