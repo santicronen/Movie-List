@@ -17,12 +17,11 @@
 */
 
 #include "main.h"
-//#include "addmovie.cpp"
-//#include "delmovie.cpp"
 
-void menu(){
+void menu(FILM *head){
 
-  int option;
+  int option, id;
+  char name[N], type[N];
 
   printf("<---- NETFLIX WATCHLIST ---->\n");
   printf("Select an option below.\n");
@@ -33,15 +32,36 @@ void menu(){
 
   scanf("%d", &option);
   switch(option){
-    case 1: // push
-    case 2: // delete
-    case 3: // modify
+    case 1:
+      printf("\nID: ");
+      scanf("%d", &id);
+
+      printf("\nTitle: ");
+      scanf("%s", &name);
+
+      printf("\nType: ");
+      scanf("%s", &type);
+
+      push(head, id, name, type);
+   // case 2: // delete
+   // case 3: // modify
     default: printf("Insert a valid value."); menu();
   }
-  
-  
-  
 }
+
+void push(FILM *head, int id, char name[], char type[]) {
+    FILM *current = head;
+    while (current->next != NULL) {
+        current = current->next;
+    }
+    
+    current->next = (FILM *) malloc(sizeof(FILM));
+    current->next->id = id;
+    current->next->name = name;
+    current->next->type = type;
+    current->next->next = NULL;
+}
+
 
 int main(){
   FILM *head = NULL;
@@ -51,5 +71,5 @@ int main(){
 	    return 1;
 	}
 
-  menu();
+  menu(head);
 }
