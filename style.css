@@ -1,0 +1,92 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    font-family: 'Red Rose';
+}
+body{
+    background-color: #1c3f70 ;
+}
+h1{
+    font-size: 40px;
+}
+.titulo{
+    text-align: center;
+}
+.contenedor{
+    width: 1024px;
+    margin: 50px auto;
+    padding: 50px;
+    border-radius: 50px;
+    background-color: white;
+    
+}
+
+.show{
+    display: block;  
+}
+form {
+    display: none; 
+    text-align: center; 
+    background-color: #1c3f70; 
+    border-radius: 40px;
+    padding: 50px;
+    color: white;
+    font-size: 20px;
+}
+.cabecera{
+    display: flex;
+    justify-content: space-between;
+    justify-items: center;
+    
+}
+.cabecera img{
+    width: 300px;
+}
+.radio-btn{
+    margin: 10px;
+    text-align: center;
+}
+.radio-btn label{
+    cursor: pointer;
+    padding: 20px;
+    font-size: 25px;
+    
+}
+.radio-btn label{
+    cursor: pointer;
+    padding: 20px;
+    font-size: 30px;
+    font-weight: 600;
+}
+.radio-btn input[type=radio]{
+    display: none;
+}
+.radio-btn input[type=radio]:checked+ label {
+    
+    color:#1c3f70 ;
+    
+}
+input{
+    margin-top: 20px;
+    width: 200px;
+    height: 30px;
+    text-align: center;
+    font-size: 15px;
+}
+.respuesta{
+    display: block;
+    width: 700px;
+    margin: 20px auto;
+    text-align: center;
+    font-size: 30px;
+    color: white;
+    background-color: transparent;
+    border: 0;
+}
+.footer{
+    margin-top: 20px;
+    text-align: right;
+}
+li{
+    list-style: none;
+}
