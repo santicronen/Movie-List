@@ -36,7 +36,7 @@ int menu(){
 
 void insert(FILM *head){
 	struct FILM *current = head;
-    while (current->next != NULL) {
+   	while (current->next != NULL) {
         current = current->next;
 
 	current->next = (FILM *) malloc(sizeof(FILM));
