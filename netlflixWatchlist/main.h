@@ -15,4 +15,4 @@ struct FILM{ //
 int menu();
 void insert(FILM *head);
 void printList(FILM *head);
-void delete(FILM *head, int id)
+void delete(FILM *head, int id);
