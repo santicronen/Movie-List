@@ -20,7 +20,7 @@
 
 int menu(){
 
-  	printf("<---- NETFLIX WATCHLIST ---->\n");
+	printf("<---- NETFLIX WATCHLIST ---->\n");
   	printf("Select an option below.\n");
   	printf("1. Add a film.\n");
   	printf("2. Delete a film.\n");
@@ -37,7 +37,6 @@ void insert(FILM *head){
 	struct FILM *current = head;
     while (current->next != NULL) {
         current = current->next;
-    }
 
 	current->next = (FILM *) malloc(sizeof(FILM));
 
@@ -50,6 +49,8 @@ void insert(FILM *head){
 	printf("Type: ");
 	scanf("%s", &current->next->type);
 
+	current->next->next = NULL;
+	}
 }
 
 int main(){
