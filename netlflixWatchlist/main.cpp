@@ -49,7 +49,7 @@ void insert(FILM *head){
 	printf("Type: ");
 	scanf("%s", &current->next->type);
 
-	current->next->next = NULL;
+	// current->next->next = NULL;
 	}
 }
 
