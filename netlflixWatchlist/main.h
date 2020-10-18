@@ -14,3 +14,4 @@ struct FILM{ //
 
 int menu();
 void insert(FILM *head);
+void printList(FILM *head);

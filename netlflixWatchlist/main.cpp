@@ -25,6 +25,7 @@ int menu(){
   	printf("1. Add a film.\n");
   	printf("2. Delete a film.\n");
 	printf("3. Modify a film.\n");
+	printf("4. Print films.\n");
 	printf("Selection? ");
 
 	int option;
@@ -49,22 +50,45 @@ void insert(FILM *head){
 	printf("Type: ");
 	scanf("%s", &current->next->type);
 
-	// current->next->next = NULL;
+	current->next->next = NULL;
 	}
 }
 
+void printList(FILM *head){
+	FILM *current = head;
+	
+	while(current != NULL){
+		printf("ID: %d\n", current->key);
+		printf("Title: %s\n", current->name);
+		printf("Type: %s\n", current->type);
+		printf("-------------------------");
+		menu();
+	}
+}
 int main(){
 	struct FILM *head = NULL;
 
+	// initial node
 	head = (FILM *) malloc(sizeof(FILM));
 		if (head == NULL) {
 		    return 1;
 		}
 
+	printf("No films created. Please add one.\n");
+	printf("ID: ");
+	scanf("%d", &head->key);
+
+	printf("Title: ");
+	scanf("%s", &head->name);
+
+	printf("Type: ");
+	scanf("%s", &head->type);
+
 	int option = menu();
 	switch(option){
-		case 1:
-			insert(head); break;
+		case 1: insert(head); break;
+		case 4: printList(head); break;
+			
     	default: printf("Insert a valid value.\n"); menu();
   }
 }
