@@ -54,6 +54,28 @@ void insert(FILM *head){
 	}
 }
 
+void delete(FILM *head, int id){
+	struct FILM *temp = *head, *prev;
+
+	if(temp != NULL && temp->key == id){
+		*head = temp->next;
+		free(temp);
+		return;
+	}
+
+	while(temp != NULL && temp->key != id){
+		prev = temp;
+		temp = temp->next;
+	}
+
+	if(temp == NULL){
+		return;
+	}
+
+	prev->next = temp->next;
+	free(temp);
+}
+
 void printList(FILM *head){
 	FILM *current = head;
 	
@@ -87,8 +109,14 @@ int main(){
 	int option = menu();
 	switch(option){
 		case 1: insert(head); break;
+		case 2: 
+			int id;
+			printf("Which ID do you want to delete?: ");
+			scanf("%d", &id);
+			delete(head, &id);
 		case 4: printList(head); break;
 			
     	default: printf("Insert a valid value.\n"); menu();
   }
+	return 0;
 }
