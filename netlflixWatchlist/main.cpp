@@ -77,7 +77,7 @@ void delete(FILM *head, int id){
 }
 
 void printList(FILM *head){
-	FILM *current = head;
+	struct FILM *current = head;
 	
 	while(current != NULL){
 		printf("ID: %d\n", current->key);
@@ -114,6 +114,7 @@ int main(){
 			printf("Which ID do you want to delete?: ");
 			scanf("%d", &id);
 			delete(head, &id);
+		// case 3: modify
 		case 4: printList(head); break;
 			
     	default: printf("Insert a valid value.\n"); menu();
