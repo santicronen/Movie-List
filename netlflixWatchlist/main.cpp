@@ -87,6 +87,7 @@ void printList(FILM *head){
 		menu();
 	}
 }
+
 int main(){
 	struct FILM *head = NULL;
 
@@ -113,7 +114,8 @@ int main(){
 			int id;
 			printf("Which ID do you want to delete?: ");
 			scanf("%d", &id);
-			delete(head, &id);
+			delete(head, id);
+			break;
 		// case 3: modify
 		case 4: printList(head); break;
 			
