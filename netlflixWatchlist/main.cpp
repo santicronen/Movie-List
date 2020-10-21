@@ -45,10 +45,10 @@ void insert(FILM *head){
 	scanf("%d", &current->next->key);
 
 	printf("Title: ");
-	scanf("%49s", current->next->name);
+	scanf("%[^\n]", current->next->name);
 
 	printf("Type: ");
-	scanf("%49s", current->next->name);
+	scanf("%[^\n]", current->next->name);
 
 	current->next->next = NULL;
 	}
@@ -104,10 +104,10 @@ int main(){
 	scanf("%d", &head->key);
 
 	printf("Title: ");
-	scanf("%49s", head->name);
+	scanf("%[^\n]", head->name);
 
 	printf("Type: ");
-	scanf("%49s", head->type);
+	scanf("%[^\n]", head->type);
 
 	int option = menu();
 	switch(option){
