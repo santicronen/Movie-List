@@ -45,16 +45,16 @@ void insert(FILM *head){
 	scanf("%d", &current->next->key);
 
 	printf("Title: ");
-	scanf("%s", &current->next->name);
+	scanf("%49s", current->next->name);
 
 	printf("Type: ");
-	scanf("%s", &current->next->type);
+	scanf("%49s", current->next->name);
 
 	current->next->next = NULL;
 	}
 }
 
-void delete(FILM *head, int id){
+void deleteList(FILM **head, int id){
 	struct FILM *temp = *head, *prev;
 
 	if(temp != NULL && temp->key == id){
@@ -91,6 +91,8 @@ void printList(FILM *head){
 int main(){
 	struct FILM *head = NULL;
 
+
+
 	// initial node
 	head = (FILM *) malloc(sizeof(FILM));
 		if (head == NULL) {
@@ -102,10 +104,10 @@ int main(){
 	scanf("%d", &head->key);
 
 	printf("Title: ");
-	scanf("%s", &head->name);
+	scanf("%s", head->name);
 
 	printf("Type: ");
-	scanf("%s", &head->type);
+	scanf("%s", head->type);
 
 	int option = menu();
 	switch(option){
@@ -114,7 +116,7 @@ int main(){
 			int id;
 			printf("Which ID do you want to delete?: ");
 			scanf("%d", &id);
-			delete(head, id);
+			deleteList(&head, id);
 			break;
 		// case 3: modify
 		case 4: printList(head); break;
