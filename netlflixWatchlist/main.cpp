@@ -74,6 +74,8 @@ void deleteList(FILM **head, int id){
 
 	prev->next = temp->next;
 	free(temp);
+	printf("Film deleted correctly. Returning to menu...\n");
+	menu();
 }
 
 void printList(FILM *head){
@@ -83,15 +85,13 @@ void printList(FILM *head){
 		printf("ID: %d\n", current->key);
 		printf("Title: %s\n", current->name);
 		printf("Type: %s\n", current->type);
-		printf("-------------------------");
+		printf("-------------------------\n");
 		menu();
 	}
 }
 
 int main(){
 	struct FILM *head = NULL;
-
-
 
 	// initial node
 	head = (FILM *) malloc(sizeof(FILM));
@@ -104,10 +104,10 @@ int main(){
 	scanf("%d", &head->key);
 
 	printf("Title: ");
-	scanf("%s", head->name);
+	scanf("%49s", head->name);
 
 	printf("Type: ");
-	scanf("%s", head->type);
+	scanf("%49s", head->type);
 
 	int option = menu();
 	switch(option){
