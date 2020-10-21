@@ -5,7 +5,7 @@
 #include <string.h>
 #include <string>
 
-struct FILM{ //
+struct FILM{
     int key;
     char name[50];
     char type[50];
@@ -17,3 +17,4 @@ int menu();
 void insert(FILM *head);
 void printList(FILM *head);
 void deleteList(FILM **head, int id);
+void modify(FILM *head, int id);
