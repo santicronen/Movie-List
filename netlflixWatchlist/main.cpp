@@ -99,6 +99,7 @@ int main(){
 		    return 1;
 		}
 
+	printf("<---- NETFLIX WATCHLIST ---->\n");
 	printf("No films created. Please add one.\n");
 	printf("ID: ");
 	scanf("%d", &head->key);
